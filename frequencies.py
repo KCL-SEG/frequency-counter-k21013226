@@ -1,10 +1,7 @@
+
+
 """Frequencies function."""
 """ENTER YOUR SOLUTION HERE!"""
-
-#produces dictionary based on items list
-#each item in items must contain a key
-#if item is not a string then the key = item converted to string
-#value = positive integer counting the no of times the item represented by key occurs in items
 
 
 def frequencies(items):
@@ -12,7 +9,6 @@ def frequencies(items):
 
     #iterate through each element in items
     #for each item check if string if not convert
-
     #check dictionary is key appears
     #if it does not than add key with value 1
     #if it does then update the dictionary value by 1
@@ -26,16 +22,20 @@ def frequencies(items):
         else:
             itemElement = x
 
+        KeyList = frequencies.keys()
 
-        for y in frequencies:
-            if itemElement == y:
-                ElementCount = frequencies.get(y) + 1
-                frequencies.update({itemElement,ElementCount})
+        if itemElement in KeyList:
+            ElementCount = frequencies.get(itemElement) + 1
+            frequencies.update({itemElement:ElementCount})
+            print("updated key value string")
 
-            else:
-                frequencies[x] = 1
+        else:
+            frequencies[itemElement] = 1
+            print("added key value string")
 
 
+        for x in frequencies:
+            print(x)
 
 
     return frequencies
