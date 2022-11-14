@@ -20,21 +20,21 @@ def frequencies(items):
     itemElement = ""
 
     for x in items:
-        if type(items[x]) != str:
-            itemElement = str(items[x])
-            print("no string")
+        if type(x) != str:
+            itemElement = str(x)
+
         else:
-            itemElement = items[x]
-            print("string")
+            itemElement = x
+
 
         for y in frequencies:
-            if itemElement == frequencies[y]:
+            if itemElement == y:
                 ElementCount = frequencies.get(y) + 1
                 frequencies.update({itemElement,ElementCount})
-                print(frequencies[x])
+
             else:
-                frequencies[items[x]] = 1
-                print(frequencies[x])
+                frequencies[x] = 1
+
 
 
 
